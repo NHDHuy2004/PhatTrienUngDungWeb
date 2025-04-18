@@ -704,3 +704,90 @@ Fix: resolve issue with user login
 This commit addresses a bug where users were unable to log in due to an incorrect password validation. 
 - Modified the password validation logic in `auth.py`. 
 - Added unit tests to verify the fix.
+
+
+
+
+Web back-end (8) - Một số chủ đề JavaScript (1)
+  . Cấu trúc ứng dụng Express cơ bản
+Tập tin index.js khởi tạo một ứng dụng web đơn giản bằng Express
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 9000;
+
+app.get("/", (req, res) => {
+  res.send('Chào bạn đến với TeoShop!');
+});
+
+app.listen(port, () => {
+  console.log(`Server đang chạy trên cổng ${port}`);
+});
+Đây là cấu trúc khởi đầu cho một ứng dụng web back-end sử dụng Node.js và Express.
+
+
+2. Lập trình đồng bộ (Synchronous Programming)
+Trong JavaScript, lập trình đồng bộ nghĩa là các lệnh được thực thi tuần tự, lệnh sau chỉ chạy khi lệnh trước hoàn thành.​
+Langbiang
+
+Ví dụ 1: Tính toán cơ bản
+
+javascript
+Copy
+Edit
+function cong(a, b) {
+  return a + b;
+}
+
+console.log("Bắt đầu");
+let kq = cong(6, 8);
+console.log("Kết quả:", kq);
+console.log("Kết thúc");
+Ví dụ 2: Vòng lặp đồng bộ
+
+javascript
+Copy
+Edit
+function xuLyDaySo() {
+  console.log("Bắt đầu xử lý...");
+  for (let i = 1; i <= 5; i++) {
+    console.log("Số:", i);
+  }
+  console.log("Xử lý xong!");
+}
+
+xuLyDaySo();
+console.log("Tiếp tục công việc khác");
+Ví dụ 3: Chặn luồng chương trình
+
+javascript
+Copy
+Edit
+function chanLuong() {
+  console.log("Bắt đầu tác vụ cần nhiều thời gian xử lý");
+  let batDau = Date.now();
+  while (Date.now() - batDau < 5000) {
+    // Giả lập chờ 5 giây bằng vòng lặp
+  }
+  console.log("Tác vụ chạy 5 giây hoàn tất");
+}
+
+console.log("Trước khi chạy tác vụ");
+chanLuong();
+console.log("Sau khi chạy tác vụ");
+Trong ví dụ trên, hàm chanLuong() chặn luồng chương trình trong 5 giây, khiến các lệnh sau phải đợi cho đến khi tác vụ hoàn tất.​
+
+
+ 3. Hàm ẩn danh (Anonymous Function)
+Hàm ẩn danh là hàm không có tên, thường được gán vào biến hoặc truyền làm đối số cho hàm khác.​
+
+Ví dụ:
+
+javascript
+Copy
+Edit
+let sayHello = function() {
+  console.log("Xin chào!");
+};
+
+sayHello();
+Hàm ẩn danh hữu ích trong các tình huống như callback hoặc xử lý sự kiện.
