@@ -1,0 +1,62 @@
+/* Đặt kiểu dáng chung cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Kiểu dáng cho phần header */
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Kiểu dáng cho phần chính */
+main {
+    padding: 20px;
+}
+
+/* Kiểu dáng cho textarea */
+textarea {
+    width: 100%;
+    height: 500px;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    background-color: #fff;
+}
+
+/* Kiểu dáng cho phần điều khiển */
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Kiểu dáng cho các nút bấm */
+.controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #6200ea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #3700b3;
+}
