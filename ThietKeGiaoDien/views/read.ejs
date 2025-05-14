@@ -1,0 +1,55 @@
+<%- include('layout', { title: title }) %>
+
+<div class="book-reader">
+    <div class="book-header mb-4">
+        <h1><%= book.title %></h1>
+        <h4 class="text-muted">Tác giả: <%= book.author %></h4>
+    </div>
+
+    <div class="book-content p-4 bg-light rounded">
+        <div class="book-text">
+            <%= book.content %>
+        </div>
+    </div>
+
+    <div class="book-controls mt-4">
+        <button class="btn btn-secondary" id="prevPage">Trang trước</button>
+        <button class="btn btn-secondary" id="nextPage">Trang sau</button>
+        <div class="font-size-controls">
+            <button class="btn btn-outline-secondary" id="decreaseFont">A-</button>
+            <button class="btn btn-outline-secondary" id="increaseFont">A+</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.book-content {
+    min-height: 500px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.book-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.font-size-controls {
+    margin-left: 20px;
+}
+</style>
+
+<script>
+document.getElementById('increaseFont').addEventListener('click', () => {
+    const content = document.querySelector('.book-text');
+    const currentSize = parseInt(window.getComputedStyle(content).fontSize);
+    content.style.fontSize = (currentSize + 2) + 'px';
+});
+
+document.getElementById('decreaseFont').addEventListener('click', () => {
+    const content = document.querySelector('.book-text');
+    const currentSize = parseInt(window.getComputedStyle(content).fontSize);
+    content.style.fontSize = (currentSize - 2) + 'px';
+});
+</script> 
